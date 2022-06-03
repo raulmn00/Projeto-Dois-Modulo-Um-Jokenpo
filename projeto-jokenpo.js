@@ -1,6 +1,15 @@
 const prompt = require("prompt-sync")();
 console.clear();
 
+/* 
+Permitir que eu decida quantas rodadas faremos. (1,0)
+Ler a minha escolha: pedra, papel ou tesoura. (2,0)
+Decidir de forma aleatória a decisão do computador (2,0)
+Mostrar quantas rodadas cada jogador ganhou (2,0)
+Determinar quem foi o grande campeão conforme a quantidade de vitórias de cada um (computador e jogador). (1,5)
+Perguntar se o Jogador quer jogar novamente, se sim, inicie volte a escolha de quantidade de rodadas, se não finalize o programa. (1,5)
+*/
+
 let jogadas = ["PEDRA", "PAPEL", "TESOURA"];
 console.log(`ESCOLHA SUA JOGADA E O COMPUTADOR IRÁ ESCOLHER ALEATORIAMENTE!
 [0]- PEDRA
@@ -94,6 +103,9 @@ while (resposta != "N") {
   }
   resposta = prompt("Deseja jogar novamente? (S/N)").toUpperCase();
   if (resposta == "S") {
+    winsComputer = 0;
+    winsUser = 0;
+    empates = 0;
     qtdRodadas = +prompt("Digite quantas rodadas você deseja jogar: ");
   }
 }
